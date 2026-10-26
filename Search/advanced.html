@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Advanced Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="top-links">
+        <a href="index.html">Google Search</a>
+        <a href="images.html">Image Search</a>
+    </header>
+
+    <h1 class="advanced-title">Advanced Search</h1>
+
+    <main class="advanced-main">
+        <h2>Find pages with...</h2>
+
+        <form action="https://www.google.com/search" method="get">
+            <div class="advanced-row">
+                <label for="all-words">all these words:</label>
+                <input type="text" id="all-words" name="as_q">
+            </div>
+
+            <div class="advanced-row">
+                <label for="exact-phrase">this exact word or phrase:</label>
+                <input type="text" id="exact-phrase" name="as_epq">
+            </div>
+
+            <div class="advanced-row">
+                <label for="any-words">any of these words:</label>
+                <input type="text" id="any-words" name="as_oq">
+            </div>
+
+            <div class="advanced-row">
+                <label for="none-words">none of these words:</label>
+                <input type="text" id="none-words" name="as_eq">
+            </div>
+
+            <div class="advanced-buttons">
+                <input type="submit" value="Advanced Search">
+            </div>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <p>HTML and CSS validation</p>
+        <a id="html-validator" href="https://validator.w3.org/">Validate HTML</a>
+        <a id="css-validator" href="https://jigsaw.w3.org/css-validator/">Validate CSS</a>
+    </footer>
+
+    <script>
+        document.getElementById("html-validator").href =
+            "https://validator.w3.org/nu/?doc=" +
+            encodeURIComponent(window.location.href);
+
+        document.getElementById("css-validator").href =
+            "https://jigsaw.w3.org/css-validator/validator?uri=" +
+            encodeURIComponent(new URL("style.css", window.location.href).href) +
+            "&profile=css3";
+    </script>
+</body>
+</html>

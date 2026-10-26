@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Image Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="top-links">
+        <a href="index.html">Google Search</a>
+        <a href="advanced.html">Advanced Search</a>
+    </header>
+
+    <main class="home">
+        <h1 class="google-logo">Google</h1>
+        <p class="page-subtitle">Image Search</p>
+
+        <form action="https://www.google.com/search" method="get">
+            <input type="hidden" name="tbm" value="isch">
+
+            <div class="search-box">
+                <span class="search-icon">&#128269;</span>
+                <input type="text" name="q" aria-label="Search images" required>
+            </div>
+
+            <div class="buttons">
+                <input type="submit" value="Google Image Search">
+            </div>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <p>HTML and CSS validation</p>
+        <a id="html-validator" href="https://validator.w3.org/">Validate HTML</a>
+        <a id="css-validator" href="https://jigsaw.w3.org/css-validator/">Validate CSS</a>
+    </footer>
+
+    <script>
+        document.getElementById("html-validator").href =
+            "https://validator.w3.org/nu/?doc=" +
+            encodeURIComponent(window.location.href);
+
+        document.getElementById("css-validator").href =
+            "https://jigsaw.w3.org/css-validator/validator?uri=" +
+            encodeURIComponent(new URL("style.css", window.location.href).href) +
+            "&profile=css3";
+    </script>
+</body>
+</html>
