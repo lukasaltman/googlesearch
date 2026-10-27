@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formuláře</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Ukázka formulářových prvků</h1>
+        <nav>
+            <a href="index.html">Google Search</a>
+            <a href="images.html">Obrázky</a>
+            <a href="advanced.html">Pokročilé hledání</a>
+        </nav>
+    </header>
+
+    <main class="form-page">
+        <h2>Vyzkoušej různé formulářové prvky</h2>
+
+        <form action="#" method="get">
+
+            <fieldset>
+                <legend>Osobní údaje</legend>
+
+                <label for="name">Jméno:</label>
+                <input type="text" id="name" name="name" placeholder="Zadej jméno">
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Zadej e-mail">
+
+                <label for="password">Heslo:</label>
+                <input type="password" id="password" name="password">
+
+                <label for="phone">Telefon:</label>
+                <input type="tel" id="phone" name="phone">
+
+                <label for="birthdate">Datum narození:</label>
+                <input type="date" id="birthdate" name="birthdate">
+
+                <label for="age">Věk:</label>
+                <input type="number" id="age" name="age" min="1" max="120">
+            </fieldset>
+
+            <fieldset>
+                <legend>Další informace</legend>
+
+                <label for="color">Oblíbená barva:</label>
+                <input type="color" id="color" name="color">
+
+                <label for="file">Vyber soubor:</label>
+                <input type="file" id="file" name="file">
+
+                <label for="website">Webová stránka:</label>
+                <input type="url" id="website" name="website">
+
+                <label for="search">Vyhledávání:</label>
+                <input type="search" id="search" name="search">
+
+                <label for="time">Oblíbený čas:</label>
+                <input type="time" id="time" name="time">
+
+                <label for="month">Oblíbený měsíc:</label>
+                <input type="month" id="month" name="month">
+            </fieldset>
+
+            <fieldset>
+                <legend>Výběr možností</legend>
+
+                <p>Jaký sport máš rád?</p>
+                <label>
+                    <input type="radio" name="sport" value="basketbal">
+                    Basketbal
+                </label>
+
+                <label>
+                    <input type="radio" name="sport" value="fotbal">
+                    Fotbal
+                </label>
+
+                <label>
+                    <input type="radio" name="sport" value="hokej">
+                    Hokej
+                </label>
+
+                <p>Co tě baví?</p>
+                <label>
+                    <input type="checkbox" name="hobby" value="sport">
+                    Sport
+                </label>
+
+                <label>
+                    <input type="checkbox" name="hobby" value="hry">
+                    Počítačové hry
+                </label>
+
+                <label>
+                    <input type="checkbox" name="hobby" value="hudba">
+                    Hudba
+                </label>
+
+                <label for="country">Vyber stát:</label>
+                <select id="country" name="country">
+                    <option value="">Vyber možnost</option>
+                    <option value="cz">Česká republika</option>
+                    <option value="sk">Slovensko</option>
+                    <option value="pl">Polsko</option>
+                    <option value="de">Německo</option>
+                </select>
+
+                <label for="rating">Jak se ti stránka líbí?</label>
+                <input type="range" id="rating" name="rating" min="0" max="10">
+            </fieldset>
+
+            <fieldset>
+                <legend>Názor a zpráva</legend>
+
+                <label for="message">Napiš zprávu:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Sem napiš text..."></textarea>
+
+                <label for="language">Oblíbený jazyk:</label>
+                <input list="languages" id="language" name="language">
+                <datalist id="languages">
+                    <option value="Čeština">
+                    <option value="Angličtina">
+                    <option value="Němčina">
+                </datalist>
+
+                <label for="week">Vyber týden:</label>
+                <input type="week" id="week" name="week">
+            </fieldset>
+
+            <div class="form-buttons">
+                <button type="submit">Odeslat</button>
+                <button type="reset">Vymazat formulář</button>
+            </div>
+
+        </form>
+
+        <section class="validators">
+            <h2>Validace stránky</h2>
+            <a id="html-validator" href="https://validator.w3.org/" target="_blank" rel="noopener">Validovat HTML</a>
+            <a id="css-validator" href="https://jigsaw.w3.org/css-validator/" target="_blank" rel="noopener">Validovat CSS</a>
+        </section>
+    </main>
+
+    <script>
+        const pageUrl = window.location.href;
+        const cssUrl = new URL("style.css", pageUrl).href;
+
+        document.getElementById("html-validator").href =
+            "https://validator.w3.org/nu/?doc=" + encodeURIComponent(pageUrl);
+
+        document.getElementById("css-validator").href =
+            "https://jigsaw.w3.org/css-validator/validator?uri=" + encodeURIComponent(cssUrl);
+    </script>
+
+</body>
+</html>
